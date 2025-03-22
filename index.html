@@ -269,6 +269,27 @@
                 <h3>Console Example</h3>
                 <button class="copy-btn" onclick="copyCode('console-code')">Copy</button>
                 <pre id="console-code">admin.addPeer("enode://541988732955c27df35f1588c734e2d4030c1fc6471ee312944718d21a72e90b12ae17a54812446d6480aef7734bab26df91442922271039a320e66ce2c3e533@109.108.71.204:41560")</pre>
+                <pre id="console-code">
+
+                #!/bin/bash
+
+                    ENODES=(
+                        "enode://541988732955c27df35f1588c734e2d4030c1fc6471ee312944718d21a72e90b12ae17a54812446d6480aef7734bab26df91442922271039a320e66ce2c3e533@109.108.71.204:41560"
+                        "enode://1fd68ca894e0a93705a20f37514d6a9ba233f2d2cb4610c5872843d11a8446e2b9298615ca7a61a996a68e9e0f04b976c58159bd0a178893a4bb39f55e2e68a2@65.108.60.41:30303"
+                        "enode://56c1c59c38b307d569404f36d9174ecf8650c19b2fcf5282a894c58dfee7e0ca489c280011ee8190236502be9ff7484006a0a76a4aa43b0b51a57f319b1160d6@109.108.71.204:37626"
+                        "enode://22f4c6d0332351e44173621d24804a1cda9632996c1e7a9eea13b2e3a2446429c53b5bd3641284f3f1f3b23c4aa3dca52c7554e1babd8d3f905c04f76d248ff7@217.61.61.152:30303"
+                        "enode://4c94962f7ab93739e04737a1bc6eb5c073087b71cec5a0e1778e489f0854245e41591c28696d8a00b430297fe2053bdb6bf544f3c2992bdeb6dc59dbfaaba17d@109.108.71.204:39404"
+                        "enode://11926802be33910cf618ff6035a8eff8480d092137d95eeb28b172dfacc2543b19f82771e9f7dd7099e87ada08b1853214abc8e41f1710018e27ad12168c6c20@89.232.109.242:39150"
+                        "enode://1f46cace5786d4c1e95262e3a9222b940669616771760f0f829541d2508ae33395933f35412ee4c3d7ee0d8b76e90a696d9e7cdce8d8ca9ab336ae186a9ecb7b@5.161.78.180:45120"
+                        "enode://07138af9a14b969f2f8a5b4015a3cdc9eb8925666a404503694c8d643151e9812dab4d687048b873e9704d01170f8c4c1e4e5e8e150c37aea5edd2364720fadf@65.109.14.191:30303"
+                        "enode://7ebe6b8cd03ea5ede09f65c328cad162d70eb125281f0f3a1f1a1b3f1c168a8fd08906de7c75442c5a6765feaa666fe3fb61ae3b9de1e459f474c9942b52628f@49.12.170.19:42914"
+                    )
+                    
+                    for enode in "${ENODES[@]}"; do
+                        echo "Adding enode: $enode"
+                        ./aves attach --exec "admin.addPeer(\"$enode\")"
+                    done
+                </pre>
             </div>
         </div>
         
